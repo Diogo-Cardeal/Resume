@@ -1,43 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diogo Cardeal — Resume</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <!-- Background canvas for particle effect -->
+    <canvas id="bg-canvas"></canvas>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- Scroll progress bar -->
+    <div id="progress-bar"></div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <div class="page-wrapper">
+
+        <!-- ========== HEADER ========== -->
+        <header class="hero" id="hero">
+            <div class="hero-tag animate-in" data-delay="0">Available for opportunities</div>
+
+            <h1 class="hero-name animate-in" data-delay="100">
+                <span class="name-first">Diogo</span>
+                <span class="name-last">Cardeal</span>
+            </h1>
+
+            <p class="hero-tagline animate-in" data-delay="200">
+                Full-Stack Developer &amp; Tech Support Specialist
+            </p>
+
+            <div class="hero-contact animate-in" data-delay="300">
+                <a href="tel:6204189760" class="contact-chip">
+                    <span class="chip-icon">📞</span> 620-418-9760
+                </a>
+                <a href="mailto:didiogomc15@gmail.com" class="contact-chip">
+                    <span class="chip-icon">✉</span> didiogomc15@gmail.com
+                </a>
+                <span class="contact-chip">
+                    <span class="chip-icon">📍</span> Newport Beach, CA 92663
+                </span>
+            </div>
+
+            <div class="scroll-hint animate-in" data-delay="500">
+                <span>scroll</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </header>
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="content">
+
+            <!-- SKILLS TICKER -->
+            <div class="skills-ticker">
+                <div class="ticker-track">
+                    <span>Python</span><span class="dot">·</span>
+                    <span>PyTorch</span><span class="dot">·</span>
+                    <span>C/C++</span><span class="dot">·</span>
+                    <span>C#</span><span class="dot">·</span>
+                    <span>JavaScript</span><span class="dot">·</span>
+                    <span>Machine Learning</span><span class="dot">·</span>
+                    <span>Game Dev</span><span class="dot">·</span>
+                    <span>IT Support</span><span class="dot">·</span>
+                    <span>Python</span><span class="dot">·</span>
+                    <span>PyTorch</span><span class="dot">·</span>
+                    <span>C/C++</span><span class="dot">·</span>
+                    <span>C#</span><span class="dot">·</span>
+                    <span>JavaScript</span><span class="dot">·</span>
+                    <span>Machine Learning</span><span class="dot">·</span>
+                    <span>Game Dev</span><span class="dot">·</span>
+                    <span>IT Support</span><span class="dot">·</span>
+                </div>
+            </div>
+
+            <!-- TWO-COLUMN GRID -->
+            <div class="grid">
+
+                <!-- LEFT COLUMN -->
+                <div class="col-left">
+
+                    <!-- EXPERIENCE -->
+                    <section class="section reveal" id="experience">
+                        <h2 class="section-title">
+                            <span class="section-num">01</span> Experience
+                        </h2>
+
+                        <div class="card" id="card-molo">
+                            <div class="card-header">
+                                <div>
+                                    <h3 class="card-role">IT Support</h3>
+                                    <p class="card-org">Molo Osteria</p>
+                                    <p class="card-loc">Newport Beach, CA</p>
+                                </div>
+                                <div class="card-date">Oct 2024</div>
+                            </div>
+                            <ul class="card-list">
+                                <li>Built a custom app to manage and track the restaurant's entire wine inventory</li>
+                                <li>Provided technical support for all apps, systems, and hardware used by the restaurant</li>
+                            </ul>
+                            <div class="card-tags">
+                                <span class="tag">App Development</span>
+                                <span class="tag">IT Support</span>
+                                <span class="tag">Systems Admin</span>
+                            </div>
+                        </div>
+
+                        <!-- Additional experience -->
+                        <div class="card" id="card-add">
+                            <div class="card-header">
+                                <div>
+                                    <h3 class="card-role">Additional Work Experience</h3>
+                                </div>
+                            </div>
+                            <ul class="card-list">
+                                <li>Construction — hands-on building and site work</li>
+                                <li>Restaurant industry — customer service and operations</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- PROJECTS -->
+                    <section class="section reveal" id="projects">
+                        <h2 class="section-title">
+                            <span class="section-num">02</span> Projects
+                        </h2>
+
+                        <div class="project-card" id="project-wine">
+                            <div class="project-accent"></div>
+                            <h3 class="project-title">MY Wine List</h3>
+                            <p class="project-sub">Stock Manager App — Wine Focused</p>
+                            <p class="project-desc">
+                                After identifying a critical gap in stock management when one of the restaurant's
+                                owners retired, I designed and developed a full application to track wine inventory,
+                                generate reports, and streamline ordering — making organization effortless for staff.
+                            </p>
+                            <div class="card-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Inventory System</span>
+                                <span class="tag">Reporting</span>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="col-right">
+
+                    <!-- EDUCATION -->
+                    <section class="section reveal" id="education">
+                        <h2 class="section-title">
+                            <span class="section-num">03</span> Education
+                        </h2>
+
+                        <div class="edu-card">
+                            <div class="edu-dot"></div>
+                            <div class="edu-body">
+                                <h3 class="edu-degree">Associate's Degree</h3>
+                                <p class="edu-school">Allen County Community College</p>
+                                <p class="edu-loc">Iola, KS</p>
+                                <p class="edu-date">Jan 2022 – May 2024</p>
+                                <ul class="card-list">
+                                    <li><strong>3.7 GPA</strong></li>
+                                    <li>Phi Theta Kappa Honor Society Member</li>
+                                    <li>Captain of the Soccer Team</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-dot"></div>
+                            <div class="edu-body">
+                                <h3 class="edu-degree">High School Diploma</h3>
+                                <p class="edu-school">Colégio Antares</p>
+                                <p class="edu-loc">Fortaleza, CE, Brazil</p>
+                                <p class="edu-date">Jan 2010 – Dec 2021</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SKILLS -->
+                    <section class="section reveal" id="skills">
+                        <h2 class="section-title">
+                            <span class="section-num">04</span> Skills
+                        </h2>
+
+                        <div class="skill-group">
+                            <p class="skill-label">Back-End</p>
+                            <div class="skill-bar-wrap">
+                                <div class="skill-bar" data-level="90"></div>
+                            </div>
+                            <span class="skill-tech">Python</span>
+                        </div>
+
+                        <div class="skill-group">
+                            <p class="skill-label">ML / Deep Learning</p>
+                            <div class="skill-bar-wrap">
+                                <div class="skill-bar" data-level="80"></div>
+                            </div>
+                            <span class="skill-tech">PyTorch</span>
+                        </div>
+
+                        <div class="skill-group">
+                            <p class="skill-label">Game Development</p>
+                            <div class="skill-bar-wrap">
+                                <div class="skill-bar" data-level="75"></div>
+                            </div>
+                            <span class="skill-tech">C / C++ / C#</span>
+                        </div>
+
+                        <div class="skill-group">
+                            <p class="skill-label">Front-End</p>
+                            <div class="skill-bar-wrap">
+                                <div class="skill-bar" data-level="55"></div>
+                            </div>
+                            <span class="skill-tech">JavaScript</span>
+                        </div>
+                    </section>
+
+                    <!-- LANGUAGES -->
+                    <section class="section reveal" id="languages">
+                        <h2 class="section-title">
+                            <span class="section-num">05</span> Languages
+                        </h2>
+
+                        <div class="lang-grid">
+                            <div class="lang-chip" data-lang="EN">
+                                <span class="lang-flag">🇺🇸</span>
+                                <span>English</span>
+                            </div>
+                            <div class="lang-chip" data-lang="PT">
+                                <span class="lang-flag">🇧🇷</span>
+                                <span>Portuguese</span>
+                            </div>
+                            <div class="lang-chip" data-lang="ES">
+                                <span class="lang-flag">🇪🇸</span>
+                                <span>Spanish</span>
+                            </div>
+                            <div class="lang-chip" data-lang="IT">
+                                <span class="lang-flag">🇮🇹</span>
+                                <span>Italian</span>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div><!-- /grid -->
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>Diogo Cardeal &copy; 2024 &mdash; Newport Beach, CA</p>
+            <p class="footer-sub">didiogomc15@gmail.com &nbsp;·&nbsp; 1232 Sherington Pl</p>
+        </footer>
+
+    </div><!-- /page-wrapper -->
+
+    <script src="resume-animations.js"></script>
+</body>
 </html>
